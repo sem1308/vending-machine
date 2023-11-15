@@ -1,4 +1,5 @@
 import styles from "../../css/item.module.css";
+import { ItemRank } from "./ItemRank";
 
 export class Item {
     constructor(rank, name, content) {
@@ -9,10 +10,11 @@ export class Item {
 }
 
 function ItemCard({ item }) {
+    const rank = ItemRank[item.rank];
     return (
         <div className={styles.item}>
             <div>
-                <span>{item.rank}</span>
+                <span style={{color:rank.color}}>{rank.content}</span>
                 <span> {item.name}</span>
             </div>
             <div className={styles["item-img"]}>

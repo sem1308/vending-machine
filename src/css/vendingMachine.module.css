@@ -6,9 +6,15 @@
     border-radius: 0.25rem;
     font-size: 1rem;
     line-height: 1.5;
+    margin-right: 10px;
+}
+
+.btn:last-child{
+    margin-right: 0px;
 }
 
 .btn-wrapper {
+    margin: 10px 0 ;
     display: flex;
     justify-content: right;
 }

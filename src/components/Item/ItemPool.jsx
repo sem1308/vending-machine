@@ -1,4 +1,4 @@
-import { ItemRank, ItemRankProbs } from "./ItemRank";
+import { RANKS, ItemRank } from "./ItemRank";
 
 import _ from 'lodash';
 
@@ -7,11 +7,11 @@ const generateItemPool = () => {
     let itemPool = [];
 
     let stIdx = 0;
-    for (const rank in ItemRank) {
-        const rankVal = ItemRank[rank];
-        const probValue = ItemRankProbs[rankVal];
+    for (const rankKey in RANKS) {
+        const rank = RANKS[rankKey];
+        const probValue = ItemRank[rank].probability;
         const fillCount = probValue - stIdx;
-        itemPool = itemPool.concat(Array(fillCount).fill(rankVal));
+        itemPool = itemPool.concat(Array(fillCount).fill(rank));
         stIdx = probValue
     }
 

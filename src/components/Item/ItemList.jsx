@@ -1,26 +1,26 @@
 import { Item } from "./Item";
-import { ItemRank } from "./ItemRank";
+import { RANKS } from "./ItemRank";
 
 const generateItemList = () => {
     let itemList = {
-        [ItemRank.COMMON]: [],
-        [ItemRank.UNCOMMON]: [],
-        [ItemRank.RARE]: [],
-        [ItemRank.UNIQUE]: [],
-        [ItemRank.LEGEND]: []
+        [RANKS.COMMON]: [],
+        [RANKS.UNCOMMON]: [],
+        [RANKS.RARE]: [],
+        [RANKS.UNIQUE]: [],
+        [RANKS.LEGEND]: []
     }
 
-    getItemList(itemList, ItemRank.COMMON);
-    getItemList(itemList, ItemRank.UNCOMMON);
-    getItemList(itemList, ItemRank.RARE);
-    getItemList(itemList, ItemRank.UNIQUE);
-    getItemList(itemList, ItemRank.LEGEND);
+    getItemList(itemList, RANKS.COMMON);
+    getItemList(itemList, RANKS.UNCOMMON);
+    getItemList(itemList, RANKS.RARE);
+    getItemList(itemList, RANKS.UNIQUE);
+    getItemList(itemList, RANKS.LEGEND);
     return itemList
 }
 
 const getItemList = (itemList, rank) => {
     switch (rank) {
-        case ItemRank.COMMON:
+        case RANKS.COMMON:
             itemList[rank].push(new Item(rank, "한손검"))
             itemList[rank].push(new Item(rank, "기본활"))
             itemList[rank].push(new Item(rank, "그냥 양손검"))
@@ -28,7 +28,7 @@ const getItemList = (itemList, rank) => {
             itemList[rank].push(new Item(rank, "방패"))
             itemList[rank].push(new Item(rank, "목걸이"))
             break;
-        case ItemRank.UNCOMMON:
+        case RANKS.UNCOMMON:
             itemList[rank].push(new Item(rank, "빛나는 한손검"))
             itemList[rank].push(new Item(rank, "빛나는 활"))
             itemList[rank].push(new Item(rank, "빛나는 양손검"))
@@ -36,7 +36,7 @@ const getItemList = (itemList, rank) => {
             itemList[rank].push(new Item(rank, "빛나는 방패"))
             itemList[rank].push(new Item(rank, "빛나는 목걸이"))
             break;
-        case ItemRank.RARE:
+        case RANKS.RARE:
             itemList[rank].push(new Item(rank, "화려한 한손검"))
             itemList[rank].push(new Item(rank, "화려한 활"))
             itemList[rank].push(new Item(rank, "화려한 양손검"))
@@ -44,7 +44,7 @@ const getItemList = (itemList, rank) => {
             itemList[rank].push(new Item(rank, "화려한 방패"))
             itemList[rank].push(new Item(rank, "화려한 목걸이"))
             break;
-        case ItemRank.UNIQUE:
+        case RANKS.UNIQUE:
             itemList[rank].push(new Item(rank, "영롱한 한손검"))
             itemList[rank].push(new Item(rank, "영롱한 활"))
             itemList[rank].push(new Item(rank, "영롱한 양손검"))
@@ -52,7 +52,7 @@ const getItemList = (itemList, rank) => {
             itemList[rank].push(new Item(rank, "영롱한 방패"))
             itemList[rank].push(new Item(rank, "영롱한 목걸이"))
             break;
-        case ItemRank.LEGEND:
+        case RANKS.LEGEND:
             itemList[rank].push(new Item(rank, "불멸의 한손검"))
             itemList[rank].push(new Item(rank, "불멸의 활"))
             itemList[rank].push(new Item(rank, "불멸의 양손검"))

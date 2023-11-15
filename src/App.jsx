@@ -7,6 +7,9 @@ function App() {
 
     return (
         <>
+            <div>
+                <h1>앙 뽑기띠</h1>
+            </div>
             <VendingMachine></VendingMachine>
         </>
     )
